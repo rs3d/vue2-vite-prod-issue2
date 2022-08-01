@@ -6,13 +6,15 @@ export interface DeleteThisInterface {}
 
 @Component
 export default class Test extends Vue {
-  // 2. OR DELETE the comment below
-  // defaultXXX = 1
+  mounted() {
+    console.log('Test.vue')
+  }
 }
 </script>
 
 <template>
   <div class="example">
+    <h3>Test.vue</h3>
     <p>See file comments in <code>src/components/Test.vue</code></p>
   </div>
 </template>

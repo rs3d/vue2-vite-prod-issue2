@@ -1,11 +1,15 @@
 <script>
 import { defineComponent } from 'vue'
-import Test from './components/Test.vue'
+// const Test = () => import('./components/Test.vue'),
 
 export default defineComponent({
   name: 'App',
-  components: {
-    Test,
+  /*components: {
+    Test:
+  },*/
+
+  get myTestComponent() {
+    return Test: () => import('./components/Test.vue'),
   },
 })
 </script>
@@ -13,7 +17,6 @@ export default defineComponent({
 <template>
   <div id="app">
     <img src="@/assets/logo.svg" alt="Vite logo" />
-    <!--<HelloWorld msg="Hello Vue 2 + Vite 3" />-->
     <Test />
   </div>
 </template>

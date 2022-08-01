@@ -13,5 +13,12 @@ export default defineConfig({
   },
   build: {
     brotliSize: false, // unsupported in StackBlitz
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        // drop_console: true,
+      },
+      // mangle: false
+    },
   },
 })
