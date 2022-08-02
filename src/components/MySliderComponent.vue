@@ -1,20 +1,20 @@
 <script lang="ts">
 import { Component, Vue, Mixins } from 'vue-property-decorator'
-import lib from './my-lib'
+import VueSlider from 'vue-slider-component'
 
-@Component
-export default class Test extends Mixins({
+@Component({
   components: {
-    ...lib,
-    MyComponent2: lib.MyComponent,
-    MyComponent3: () => import('./MyComponent.vue'),
+    VueSlider,
   },
-}) {
+})
+export default class MySliderComponent extends Vue {
   get myTestComponent() {
     return {
       MyComponent: lib.MyComponent,
     }
   }
+
+  value = 0
 
   mounted() {
     console.log('Test.vue')
@@ -25,11 +25,7 @@ export default class Test extends Mixins({
 <template>
   <div class="example">
     <h3>Test.vue</h3>
-
-    <MyComponent />
-    <MyComponent2 />
-    <MyComponent3 />
-
+    <!--<vue-slider v-model="value"></vue-slider>-->
     <component :is="'h3'" v-text="'component :is="'h3'"'" />
 
     <component :is="myTestComponent.MyComponent" />

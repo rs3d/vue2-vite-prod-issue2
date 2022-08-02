@@ -1,15 +1,13 @@
 <script>
 import { defineComponent } from 'vue'
-// const Test = () => import('./components/Test.vue'),
+// import MySliderComponent from './components/MySliderComponent.vue':
+const Test = () => import('./components/Test.vue')
 
 export default defineComponent({
   name: 'App',
-  /*components: {
-    Test:
-  },*/
-
-  get myTestComponent() {
-    return Test: () => import('./components/Test.vue'),
+  components: {
+    Test,
+    MySliderComponent,
   },
 })
 </script>
